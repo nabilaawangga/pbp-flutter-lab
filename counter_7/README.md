@@ -1,5 +1,4 @@
-# counter_7
-
+# TUGAS 7
 ## Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 Stateless widget adalah widget berupa text, data dan lain-lain yang tidak akan pernah berubah. Tidak akan pernah berubah ini berarti perubahan yang dilakukan oleh user seperti menekan tombol dan yang lainnya atau perubahan lain terhadap data pada aplikasi tidak akan mengubah stateless widget. Data pada stateless widget hanya mengacu pada data yang dimasukkan saat membuat stateless widget tersebut. Sedangkan stateful widget kebalikan dari stateless widget di mana widget-widget yang stateful dapat berubah-ubah tampilannya seperti mengupdate tampilan, merubah warna, menambah jumlah baris dan lain-lain. Stateful widget dapat berubah secara dinamis pada aplikasi tergantung dengan kebutuhan.
 
@@ -30,3 +29,31 @@ Const harus menginisialisasi variabel sebelum kompliasi atau runtime. Const tida
 2. Membuat method _decrementCounter yang berfungsi untuk mengurangi nilai pada counter. Namun, jika nilai pada counter sudah 0 pada saat method tersebut dijalankan, maka counter tetap 0 bukan -1. Proses decrement variabel dilakukan dalam fungsi setState().
 3. Pada body, di bagian childrennya ditambahkan widget dan conditional untuk handle tampilan tulisan ganjil dan genap
 4. Membuat FloatingActionButton yang akan menampilkan 2 button yaitu decrement dan increment dan menambahkan onPressed agar ketika button dipencet akan terhubung ke method yang seharusnya
+
+# TUGAS 8
+## Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement
+ Navigator.push digunakan untuk menambahkan rute lain ke atas tumpukan screen (stack) saat ini. Halaman baru ditampilkan di atas halaman sebelumnya. Sedangkan Navigator.pushReplacement digunakan untuk menambahkan rute lain, berpindah dari halaman sebelumnya ke halaman yang baru. Command akan menghapus stack atau layer halaman yang ada di bawahnya lalu akan digantikan dengan halaman yang baru.
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+1. Drawer: menampilkan menu navigasi di sisi kiri aplikasi
+2. Form: container untuk tempat menampung input-input dari user
+3. Container: dasar/alas untuk menaruh widget-widget lain agar menjadi satu kelompok komponen widget
+4. Card: container kartu untuk tempat menaruh data-data input dari user
+5. DropDownButton: fields untuk memilih input
+6. ListTile: seperti container tetapi untuk menaruh text sesuai dengan kebutuhannya seperti text title, subtitle, subtrailing dan lain-lain
+
+## Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed)
+1. OnPressed
+2. OnSaved
+3. OnChanged
+4. OnEditingComplete
+5. OnTap
+
+## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+Navigator konsepnya seperti stack di mana memanfaatkan push dan pop untuk mengganti halaman dari aplikasi flutter. Penggunaan pop akan menghapus halaman paling atas pada layer. Sedangkan push akan menampilkan halaman baru di atas halaman lama. Pushreplacement akan menghapus halaman lama sehingga tidak akan ditimpa oleh halaman baru.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Membuat navigator untuk tambah budget dan data budget menggunakan drawer
+2. Membuat 2 file baru bernama formbudget.dart untuk halama mengisi form dan databudget.dart untuk menampilkan data dari input form
+3. Membuat isi form untuk menambahkan input pada formbudget.dart menggunakan textformfield dan dropdownbutton lalu disimpan data inputnya dalam list
+4. Membuat class data pada databudet.dart yang isinya menyimpan data input dari form lalu ditampilkan menggunakan card.
