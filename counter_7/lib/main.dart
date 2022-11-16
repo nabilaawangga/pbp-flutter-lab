@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:counter_7/formbudget.dart';
+import 'package:counter_7/databudget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -77,6 +79,42 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      drawer: Drawer(
+          child: Column(
+            children: [
+              // Menambahkan clickable menu
+              ListTile(
+                title: const Text('Counter_7'),
+                onTap: () {
+                  // Route menu ke halaman utama
+                  Navigator.pop(
+                    context,
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Tambah Budget'),
+                onTap: () {
+                  // Route menu ke halaman form
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Data Budget'),
+                onTap: () {
+                  // Route menu ke halaman form
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyDataPage()),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
