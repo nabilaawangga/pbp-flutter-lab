@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/formbudget.dart';
-import 'package:counter_7/databudget.dart';
+import 'package:counter_7/page/formbudget.dart';
+import 'package:counter_7/page/databudget.dart';
+import 'package:counter_7/page/mywatchlist_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
+        // try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
         // "hot reload" (press "r" in the console where you ran "flutter run",
@@ -109,6 +109,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const MyDataPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('My Watch List'),
+                onTap: () {
+                  // Route menu ke halaman form
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyWatchlistPage()),
                   );
                 },
               ),
