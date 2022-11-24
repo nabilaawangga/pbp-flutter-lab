@@ -57,3 +57,29 @@ Navigator konsepnya seperti stack di mana memanfaatkan push dan pop untuk mengga
 2. Membuat 2 file baru bernama formbudget.dart untuk halama mengisi form dan databudget.dart untuk menampilkan data dari input form
 3. Membuat isi form untuk menambahkan input pada formbudget.dart menggunakan textformfield dan dropdownbutton lalu disimpan data inputnya dalam list
 4. Membuat class data pada databudet.dart yang isinya menyimpan data input dari form lalu ditampilkan menggunakan card.
+
+## TUGAS 9
+##  Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+Kita dapat melakukan pengambilan data JSON tanpa membuat model dengan menggunakan fungsi jsonDecode(). Penggunaan fungsi tersebut akan menghasilkan sebuah map dengan tipe string Map<String, dynamic>. Pengembalian map tersebut akan rentan terkena error karena  kita tidak tau tipe data apa yang sebenarnya ada di json dan kita hanya bisa mendapatkan datanya dengan tipe String. Selain itu, sangat jarang implementasi pengambilan data JSON ini tanpa membuat model. Sehingga lebih baik membuat model terlebih dahulu untuk menghindari error dan agar lebih efisien.
+
+##  Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+1. ListView: Widget ini digunakan untuk memberikan fiture scroll pada data-data yang ditampilkan
+2. InkWell: Inkwell digunakan pada item yang ingin ditap dan menimbulkan kesan efek
+3. FutureBuilder: widget yang disediakan untuk mendukung proses asynchronous.
+
+##  Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+Pertama-tama, membuat model untuk data json yang ingin diambil. Setelah itu, mengambil data json pada url yang berisi data json menggunakan http.get(). Data yang akan diambil akan di-decode menjadi bentuk json dan dikonversi ke dalam bentuk object sesuai dengan class yang telah dibuat.
+
+##  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1.  Menambahkan tombol navigasi pada drawer/hamburger untuk ke halaman mywatchlist.
+Saya menambahkan My Watch List pada drawer yang akan di-push menuju halaman my watch list
+2.  Membuat satu file dart yang berisi model mywatchlist.
+Isi model dari mywatchlist ini adalah fields-fields dari data json yang dibuat menggunakan Quicktype.
+3. Menambahkan halaman mywatchlist yang berisi semua watch list yang ada pada endpoint JSON di Django yang telah kamu deploy ke Heroku sebelumnya
+
+Saya membuat file mywatchlist_page.dart untuk menambahkan halaman mywatchlist yang berisi nama-nama film yanga da pada data json. Menampilkan datanya menggunakan futurebuilder() lalu menggunakan onTap agar tiap-tiap film jika dipencet akan mengarah ke halaman detail dari film tersebut.
+
+4.  Menambahkan halaman detail untuk setiap mywatchlist yang ada pada daftar tersebut. Halaman ini menampilkan judul, release date, rating, review, dan status (sudah ditonton/belum).
+
+Untuk menambahkan halaman detail, saya membuat file mywatchlistdetail yang akan menampilkan data detail dari film. Lalu saya menambahkan tombol kembali yang jika dipencet akan kembali ke halaman mywatchlist_page.dart
